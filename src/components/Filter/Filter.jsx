@@ -7,7 +7,7 @@ import {
 const Filter = ({ filterContacts, filter }) => {
   return (
     <>
-      <CaptionFStyled>Find contacts by name</CaptionFStyled>
+      <CaptionFStyled>Find contacts by startsWith name</CaptionFStyled>
       <InputStyled onChange={filterContacts} value={filter} type="text" />
     </>
   );

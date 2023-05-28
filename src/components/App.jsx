@@ -10,10 +10,10 @@ import {
 export class App extends Component {
   state = {
     contacts: [
-      // { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      // { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      // { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      // { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+      { id: 'id-1', name: 'R Simpson', number: '459-12-56' },
+      { id: 'id-2', name: 'Herne Kne', number: '443-89-12' },
+      { id: 'id-3', name: 'Edn Clnts', number: '645-17-79' },
+      { id: 'id-4', name: 'Aie Cnd', number: '227-91-26' },
     ],
     filter: '',
   };
@@ -44,9 +44,11 @@ export class App extends Component {
 
   showContacts = () => {
     const { contacts, filter: condition } = this.state;
-    if (condition === '') return contacts;
+
+    if (!condition.trim()) return contacts; // === ''
     return contacts.filter(el =>
-      el.name.toLowerCase().includes(condition.toLowerCase())
+      // el.name.toLowerCase().includes(condition.toLowerCase().trim())
+      el.name.toLowerCase().startsWith(condition.toLowerCase().trim())
     );
   };
 
